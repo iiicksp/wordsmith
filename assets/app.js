@@ -1,8 +1,8 @@
 const CONFIG = {
-  API_BASE: window.WORDSMITH_API || "",
+  FORMSUBMIT: "https://formsubmit.co/ajax/kounn@yandex.ru",
   DOWNLOADS: {
-    win_installer: "#",
-    win_portable: "#",
+    win_installer: "https://disk.yandex.ru/d/Ce0bFbNdpAL0Rg",
+    win_portable: "https://disk.yandex.ru/d/qjK1AQ0LE4FRUQ",
     source: "downloads/Wordsmith-1.4.0-source.zip"
   },
   VERSION: "1.4.0"
@@ -31,10 +31,10 @@ function initTyped(){
   })();
 }
 
-async function postJSON(path, body){
-  const base = (CONFIG.API_BASE || "").replace(/\/$/,"");
-  const r = await fetch(base + path, {
-    method:"POST", headers:{"Content-Type":"application/json"}, body:JSON.stringify(body)
+async function postForm(subject, body){
+  const payload = Object.assign({_subject: subject}, body);
+  const r = await fetch(CONFIG.FORMSUBMIT, {
+    method:"POST", headers:{"Content-Type":"application/json","Accept":"application/json"}, body:JSON.stringify(payload)
   });
   if(!r.ok) throw new Error("HTTP " + r.status);
   return r.json();
@@ -49,18 +49,18 @@ function initApplyForm(){
     const data = Object.fromEntries(new FormData(form).entries());
     btn.disabled = true; btn.textContent = "Отправляю…";
     try{
-      const res = await postJSON("/api/apply", data);
-      revealDownload(res.token, data.os);
+      await postForm("Новая заявка на тестирование Wordsmith", data);
+      revealDownload(data.name || "tester", data.os);
     }catch(err){
-      revealDownload("offline", data.os);
+      revealDownload(data.name || "offline", data.os);
     }
   });
 }
 
 function dlLink(href, label, sub, cls){
   const disabled = (!href || href === "#");
-  const guard = "alert('Ссылка на сборку появится здесь.');return false;";
-  return `<a class="btn ${cls}" href="${disabled?'#':href}" ${disabled?`onclick="${guard}"`:'download'}>
+  const guard = "alert('Ссылка пока недоступна.');return false;";
+  return `<a class="btn ${cls}" href="${disabled?'#':href}" ${disabled?`onclick="${guard}"`:'target="_blank" rel="noopener"'}>
     <span>⌨︎</span><span>${label}<br><small class="muted">${sub}</small></span></a>`;
 }
 
@@ -102,7 +102,7 @@ function initFeedbackForm(){
     const data = Object.fromEntries(new FormData(form).entries());
     data.rating = parseInt(data.rating || "0", 10);
     btn.disabled = true; btn.textContent = "Отправляю…";
-    try{ await postJSON("/api/feedback", data); }catch(err){}
+    try{ await postForm("Фидбек Wordsmith (оценка: " + data.rating + ")", data); }catch(err){}
     const wrap = document.getElementById("feedback-wrap");
     wrap.innerHTML = `<div class="sheet center">
       <span class="stamp">Принято</span>
