@@ -3,7 +3,6 @@ const CONFIG = {
   DOWNLOADS: {
     win_installer: "https://disk.yandex.ru/d/Ce0bFbNdpAL0Rg",
     win_portable: "https://disk.yandex.ru/d/qjK1AQ0LE4FRUQ",
-    source: "downloads/Wordsmith-1.4.0-source.zip"
   },
   VERSION: "1.4.0"
 };
@@ -45,6 +44,7 @@ function initApplyForm(){
   if(!form) return;
   form.addEventListener("submit", async (e) => {
     e.preventDefault();
+    if(!form.checkValidity()){ form.reportValidity(); return; }
     const btn = form.querySelector("button[type=submit]");
     const data = Object.fromEntries(new FormData(form).entries());
     btn.disabled = true; btn.textContent = "Отправляю…";
@@ -79,12 +79,6 @@ function revealDownload(token, os){
         ${dlLink(d.win_portable,"Windows · портативная","exe, без установки","red")}
         ${dlLink(d.win_installer,"Windows · установщик",".exe (NSIS)","dark")}
       </div>
-      <p class="muted" style="margin-top:10px">Скомпилированная сборка .exe придёт на вашу почту
-        после подтверждения заявки. А пока можно забрать исходники, готовые к сборке
-        (<code>npm install &amp;&amp; npm run build</code>):</p>
-      <div class="btn-row">
-        ${dlLink(d.source,"Wordsmith · исходники","zip, готово к сборке","dark")}
-      </div>
       <hr class="divider">
       <p class="muted">Поигрались? Будем рады услышать впечатления →
         <a href="feedback.html">оставить фидбек</a>.</p>
@@ -98,9 +92,11 @@ function initFeedbackForm(){
   if(!form) return;
   form.addEventListener("submit", async (e) => {
     e.preventDefault();
+    if(!form.checkValidity()){ form.reportValidity(); return; }
     const btn = form.querySelector("button[type=submit]");
     const data = Object.fromEntries(new FormData(form).entries());
     data.rating = parseInt(data.rating || "0", 10);
+    if(!data.rating){ alert("Пожалуйста, поставьте оценку."); return; }
     btn.disabled = true; btn.textContent = "Отправляю…";
     try{ await postForm("Фидбек Wordsmith (оценка: " + data.rating + ")", data); }catch(err){}
     const wrap = document.getElementById("feedback-wrap");
