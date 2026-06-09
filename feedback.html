@@ -1,0 +1,84 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Фидбек — Wordsmith</title>
+<link rel="stylesheet" href="assets/style.css">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E⌨️%3C/text%3E%3C/svg%3E">
+</head>
+<body data-page="feedback">
+
+<header class="topbar"><div class="wrap">
+  <a class="brand" href="index.html"><span class="tw">⌨︎</span> Wordsmith</a>
+  <nav class="nav">
+    <a href="index.html" data-page="home">Главная</a>
+    <a href="index.html#features" data-page="features">Возможности</a>
+    <a href="guide.html" data-page="guide">Гайд</a>
+    <a href="tester.html" data-page="tester">Стать тестером</a>
+    <a href="feedback.html" data-page="feedback">Фидбек</a>
+  </nav>
+</div></header>
+
+<section class="section"><div class="wrap" id="feedback-wrap">
+  <h1>Поделитесь впечатлениями</h1>
+  <p class="lead">Что зашло, что бесит, чего не хватает — пишите честно. Это главное топливо для развития Wordsmith.</p>
+
+  <div class="sheet" style="margin-top:18px">
+    <form id="feedback-form" class="form" novalidate>
+      <div class="field">
+        <label>Общая оценка</label>
+        <div class="stars">
+          <input type="radio" id="s5" name="rating" value="5"><label for="s5" title="5">★</label>
+          <input type="radio" id="s4" name="rating" value="4"><label for="s4" title="4">★</label>
+          <input type="radio" id="s3" name="rating" value="3"><label for="s3" title="3">★</label>
+          <input type="radio" id="s2" name="rating" value="2"><label for="s2" title="2">★</label>
+          <input type="radio" id="s1" name="rating" value="1"><label for="s1" title="1">★</label>
+        </div>
+      </div>
+      <div class="field">
+        <label>Имя / код тестера</label>
+        <input name="name" maxlength="120" placeholder="Необязательно">
+      </div>
+      <div class="field">
+        <label>Контакт для ответа</label>
+        <input name="contact" maxlength="200" placeholder="e-mail или @telegram (необязательно)">
+      </div>
+      <div class="field">
+        <label>Версия сборки</label>
+        <input name="version" maxlength="40" placeholder="например, 1.3.0">
+      </div>
+      <div class="field">
+        <label>Что понравилось</label>
+        <textarea name="liked" maxlength="2000" placeholder="Любимые функции, что показалось удобным…"></textarea>
+      </div>
+      <div class="field">
+        <label>Баги и проблемы</label>
+        <textarea name="bugs" maxlength="4000" placeholder="Что сломалось, при каких действиях, на какой ОС…"></textarea>
+      </div>
+      <div class="field">
+        <label>Чего не хватает / пожелания</label>
+        <textarea name="wishes" maxlength="4000" placeholder="Какие функции добавить или изменить…"></textarea>
+      </div>
+      <div class="field">
+        <label>Свободный комментарий</label>
+        <textarea name="message" maxlength="4000" placeholder="Всё остальное, что хочется сказать."></textarea>
+      </div>
+      <div class="btn-row">
+        <button type="submit" class="btn red big">⌨︎ Отправить фидбек</button>
+      </div>
+    </form>
+  </div>
+</div></section>
+
+<footer><div class="wrap">
+  <p><span class="brand" style="font-size:18px">⌨︎ Wordsmith</span> — настольный редактор для писателей.</p>
+  <p class="muted">Автор: Sirin (Ксения Зборовская) ·
+    <a href="https://www.litres.ru/author/33768736/" target="_blank" rel="noopener">Литрес</a> ·
+    <a href="https://vk.com/sirin_voice" target="_blank" rel="noopener">ВКонтакте</a>.</p>
+  <p class="muted">© 2026 Wordsmith · Sirin</p>
+</div></footer>
+
+<script src="assets/app.js"></script>
+</body>
+</html>

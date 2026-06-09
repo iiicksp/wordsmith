@@ -1,0 +1,192 @@
+@import url('https://fonts.googleapis.com/css2?family=Special+Elite&family=Courier+Prime:ital,wght@0,400;0,700;1,400&display=swap');
+
+:root{
+  --paper:#efe6d2;
+  --paper-2:#f7f0df;
+  --ink:#2a221a;
+  --ink-soft:#5a4d3b;
+  --ribbon:#b23a2e;
+  --ribbon-d:#8f2d23;
+  --line:#c8b896;
+  --shadow:rgba(60,46,25,.25);
+  --key:#34302a;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+  margin:0;
+  font-family:'Courier Prime','Courier New',monospace;
+  color:var(--ink);
+  background:#e7dcc2;
+  background-image:
+    radial-gradient(circle at 20% 10%,rgba(255,255,255,.45),transparent 45%),
+    radial-gradient(circle at 80% 0%,rgba(178,58,46,.06),transparent 40%),
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='120'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3Crect width='120' height='120' filter='url(%23n)' opacity='0.04'/%3E%3C/svg%3E");
+  line-height:1.6;
+}
+.wrap{max-width:1040px;margin:0 auto;padding:0 20px}
+
+h1,h2,h3,.brand{font-family:'Special Elite',cursive}
+h1{font-size:clamp(34px,6vw,64px);letter-spacing:1px;margin:.2em 0}
+h2{font-size:clamp(24px,3.4vw,34px);margin:.6em 0 .3em}
+h3{font-size:20px;margin:.4em 0}
+a{color:var(--ribbon-d)}
+.muted{color:var(--ink-soft)}
+.center{text-align:center}
+
+.topbar{
+  position:sticky;top:0;z-index:50;
+  background:linear-gradient(#3a342c,#2c2722);
+  border-bottom:3px solid #1c1813;
+  box-shadow:0 3px 10px var(--shadow);
+}
+.topbar .wrap{display:flex;align-items:center;gap:14px;height:60px}
+.brand{
+  color:#f3ead2;font-size:24px;text-decoration:none;display:flex;align-items:center;gap:10px;
+}
+.brand .tw{font-size:22px}
+.nav{margin-left:auto;display:flex;gap:6px;flex-wrap:wrap}
+.nav a{
+  color:#e9dcc0;text-decoration:none;font-size:14px;padding:8px 12px;border-radius:6px;
+  border:1px solid transparent;
+}
+.nav a:hover{border-color:#5e5547;color:#fff}
+.nav a.active{background:var(--ribbon);color:#fff}
+
+.sheet{
+  position:relative;background:var(--paper-2);
+  border:1px solid var(--line);
+  border-radius:4px;
+  box-shadow:0 10px 30px var(--shadow);
+  padding:38px 40px;
+}
+.sheet:before{
+  content:"";position:absolute;left:0;right:0;top:-1px;height:14px;
+  background:repeating-linear-gradient(90deg,transparent 0 10px,rgba(0,0,0,.07) 10px 12px);
+  border-radius:4px 4px 0 0;
+}
+.platen{
+  height:16px;background:linear-gradient(#262019,#3a332a);
+  border-radius:10px;margin:0 auto;width:96%;
+  box-shadow:inset 0 2px 4px rgba(0,0,0,.5);
+}
+
+.hero{padding:54px 0 30px}
+.hero .tag{font-family:'Special Elite';color:var(--ribbon-d);letter-spacing:3px;text-transform:uppercase;font-size:13px}
+.hero .lead{font-size:18px;max-width:60ch}
+.typed{border-right:2px solid var(--ink);white-space:nowrap;overflow:hidden;display:inline-block;vertical-align:bottom}
+.cursor-blink{animation:blink 1s steps(1) infinite}
+@keyframes blink{50%{opacity:0}}
+
+.hero-grid{display:grid;grid-template-columns:1fr 320px;gap:38px;align-items:center}
+.hero-grid .sheet{margin:0}
+.cover-frame{position:relative;justify-self:center}
+.cover-frame img{
+  display:block;width:300px;max-width:100%;border-radius:3px;
+  box-shadow:0 14px 34px rgba(28,20,10,.45),0 2px 0 #b3a079;
+  transform:rotate(-1.4deg);transition:transform .2s;
+}
+.cover-frame img:hover{transform:rotate(0deg) scale(1.02)}
+.cover-frame:after{
+  content:"«Вороний Утёс» — пример проекта в Wordsmith";
+  position:absolute;left:50%;bottom:-30px;transform:translateX(-50%);
+  white-space:nowrap;font-family:'Special Elite';font-size:12px;color:var(--ink-soft);
+}
+.cover-tape{
+  position:absolute;top:-14px;left:50%;transform:translateX(-50%) rotate(-3deg);
+  width:120px;height:26px;background:rgba(178,58,46,.22);
+  border:1px dashed rgba(126,39,30,.5);border-radius:2px;z-index:2;
+}
+
+.btn{
+  font-family:'Special Elite';font-size:15px;
+  display:inline-flex;align-items:center;gap:9px;
+  background:radial-gradient(circle at 50% 30%,#fbf6ea,#e7dcc2);
+  color:var(--key);text-decoration:none;
+  padding:13px 22px;border-radius:10px;
+  border:1px solid #b3a079;
+  box-shadow:0 4px 0 #9c8a64,0 6px 10px var(--shadow);
+  cursor:pointer;transition:transform .05s,box-shadow .05s;
+}
+.btn:active{transform:translateY(3px);box-shadow:0 1px 0 #9c8a64}
+.btn.red{background:linear-gradient(#c8473a,#9f3328);color:#fff;border-color:#7e271e;box-shadow:0 4px 0 #6f2018,0 6px 10px var(--shadow)}
+.btn.dark{background:linear-gradient(#3a342c,#2a251f);color:#f3ead2;border-color:#15110c;box-shadow:0 4px 0 #100d09,0 6px 10px var(--shadow)}
+.btn.big{font-size:18px;padding:16px 28px}
+.btn-row{display:flex;gap:14px;flex-wrap:wrap;margin-top:18px}
+
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:18px;margin-top:18px}
+.card{
+  background:var(--paper-2);border:1px solid var(--line);border-radius:6px;padding:18px 18px 20px;
+  box-shadow:0 6px 16px var(--shadow);
+}
+.card .ic{font-size:26px}
+.card h3{margin:.3em 0}
+.card p{margin:.2em 0 0;font-size:14px;color:var(--ink-soft)}
+
+.section{padding:40px 0}
+.section.alt{background:rgba(58,52,44,.05)}
+.divider{height:2px;border:0;border-top:2px dashed var(--line);margin:34px 0}
+
+.form{display:grid;gap:16px;max-width:680px}
+.field{display:grid;gap:6px}
+.field label{font-family:'Special Elite';font-size:14px}
+.field .hint{font-size:12px;color:var(--ink-soft)}
+input,select,textarea{
+  font-family:'Courier Prime',monospace;font-size:15px;color:var(--ink);
+  background:#fffdf6;border:1px solid #bfae87;border-radius:4px;padding:11px 12px;width:100%;
+}
+input:focus,select,textarea:focus{outline:2px solid var(--ribbon);border-color:var(--ribbon)}
+textarea{min-height:110px;resize:vertical}
+.radios,.checks{display:flex;gap:18px;flex-wrap:wrap}
+.radios label,.checks label{font-family:'Courier Prime';display:flex;align-items:center;gap:7px;font-size:14px}
+.req{color:var(--ribbon)}
+.note{background:#fff7df;border-left:4px solid var(--ribbon);padding:12px 14px;border-radius:4px;font-size:14px}
+
+.stars{display:flex;flex-direction:row-reverse;gap:6px;justify-content:flex-start;font-size:30px}
+.stars input{display:none}
+.stars label{cursor:pointer;color:#cdbf9f;line-height:1}
+.stars input:checked ~ label,.stars label:hover,.stars label:hover ~ label{color:var(--ribbon)}
+
+.hidden{display:none}
+.download-card{margin-top:26px;animation:rollin .5s ease}
+@keyframes rollin{from{opacity:0;transform:translateY(-16px)}to{opacity:1}}
+.stamp{display:inline-block;transform:rotate(-8deg);border:3px double var(--ribbon);color:var(--ribbon);
+  font-family:'Special Elite';padding:6px 14px;border-radius:6px;letter-spacing:2px;text-transform:uppercase;font-size:14px}
+
+.guide-toc{position:sticky;top:74px}
+.guide-toc a{display:block;padding:5px 8px;border-radius:4px;text-decoration:none;color:var(--ink-soft);font-size:13px}
+.guide-toc a:hover{background:rgba(58,52,44,.08);color:var(--ink)}
+.guide-layout{display:grid;grid-template-columns:220px 1fr;gap:30px;align-items:start}
+.shot{margin:14px 0 6px;border:1px solid var(--line);border-radius:6px;overflow:hidden;box-shadow:0 8px 20px var(--shadow);background:#000}
+.shot img{display:block;width:100%}
+.cap{font-size:13px;color:var(--ink-soft);margin:2px 0 26px}
+.step{counter-increment:step;}
+.feature{padding:14px 0 6px;border-top:2px dashed var(--line)}
+.feature:first-of-type{border-top:0}
+.quote-book{background:#fbf4e1;border-left:4px solid var(--line);font-style:italic;padding:10px 14px;margin:10px 0;color:#4a3f2e}
+.chip{display:inline-block;background:#e3d8bd;border:1px solid var(--line);border-radius:20px;padding:2px 10px;font-size:12px;margin:2px 4px 2px 0}
+
+.author-card{display:grid;grid-template-columns:1fr 1.4fr;gap:34px;align-items:center;margin-top:26px}
+.author-bio{background:var(--paper-2);border:1px solid var(--line);border-radius:6px;padding:22px;box-shadow:0 6px 16px var(--shadow)}
+.author-name{font-family:'Special Elite';font-size:30px;margin:0 0 6px}
+.author-links{display:flex;gap:12px;flex-wrap:wrap;margin-top:16px}
+.books{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+.book{display:flex;flex-direction:column;text-decoration:none;color:var(--ink);background:var(--paper-2);border:1px solid var(--line);border-radius:6px;padding:10px;box-shadow:0 6px 16px var(--shadow);transition:transform .15s ease,box-shadow .15s ease}
+.book:hover{transform:translateY(-4px);box-shadow:0 12px 24px var(--shadow)}
+.book img{display:block;width:100%;border-radius:4px;border:1px solid var(--line)}
+.book-title{font-family:'Special Elite';font-size:15px;margin-top:8px}
+.book-meta{font-size:12px;color:var(--ink-soft)}
+.book-soon{cursor:default}
+.book-soon img{filter:grayscale(.25)}
+
+footer{background:#2c2722;color:#cdbf9f;margin-top:50px;padding:26px 0;font-size:13px}
+footer a{color:#e9dcc0}
+
+@media(max-width:760px){
+  .guide-layout{grid-template-columns:1fr}
+  .guide-toc{position:static}
+  .sheet{padding:24px 20px}
+  .hero-grid{grid-template-columns:1fr;gap:48px}
+  .cover-frame{order:-1}
+  .author-card{grid-template-columns:1fr}
+}

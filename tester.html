@@ -1,0 +1,89 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Стать тестером — Wordsmith</title>
+<link rel="stylesheet" href="assets/style.css">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E⌨️%3C/text%3E%3C/svg%3E">
+</head>
+<body data-page="tester">
+
+<header class="topbar"><div class="wrap">
+  <a class="brand" href="index.html"><span class="tw">⌨︎</span> Wordsmith</a>
+  <nav class="nav">
+    <a href="index.html" data-page="home">Главная</a>
+    <a href="index.html#features" data-page="features">Возможности</a>
+    <a href="guide.html" data-page="guide">Гайд</a>
+    <a href="tester.html" data-page="tester">Стать тестером</a>
+    <a href="feedback.html" data-page="feedback">Фидбек</a>
+  </nav>
+</div></header>
+
+<section class="section"><div class="wrap">
+  <h1>Стать тестером</h1>
+  <p class="lead">Заполните анкету — и сразу получите ссылку на скачивание Wordsmith.
+    Это займёт минуту. Все поля со <span class="req">★</span> обязательны.</p>
+
+  <div class="sheet" style="margin-top:18px">
+    <form id="apply-form" class="form" novalidate>
+      <div class="field">
+        <label>Как вас зовут <span class="req">★</span></label>
+        <input name="name" required maxlength="120" placeholder="Имя или псевдоним">
+      </div>
+      <div class="field">
+        <label>E-mail <span class="req">★</span></label>
+        <input name="email" type="email" required placeholder="you@example.com">
+        <span class="hint">Нужен, чтобы прислать обновления сборки. Спам не шлём.</span>
+      </div>
+      <div class="field">
+        <label>Telegram / другой контакт</label>
+        <input name="contact" maxlength="200" placeholder="@username (необязательно)">
+      </div>
+      <div class="field">
+        <label>Операционная система <span class="req">★</span></label>
+        <div class="radios">
+          <label><input type="radio" name="os" value="windows" checked> Windows</label>
+          <label><input type="radio" name="os" value="other"> Другая / пока не знаю</label>
+        </div>
+      </div>
+      <div class="field">
+        <label>Пишете ли вы сами?</label>
+        <select name="experience">
+          <option value="">— выберите —</option>
+          <option>Пишу регулярно, есть законченные тексты</option>
+          <option>Пишу для себя / время от времени</option>
+          <option>Только начинаю</option>
+          <option>Не пишу, но интересно протестировать</option>
+        </select>
+      </div>
+      <div class="field">
+        <label>Любимые жанры</label>
+        <input name="genres" maxlength="300" placeholder="фэнтези, драма, нон-фикшн…">
+      </div>
+      <div class="field">
+        <label>Что хотите проверить в первую очередь?</label>
+        <textarea name="why" maxlength="2000" placeholder="Например: удобно ли вести большой роман с десятками персонажей."></textarea>
+      </div>
+
+      <p class="note">Нажимая «Получить ссылку», вы соглашаетесь, что мы свяжемся с вами по поводу тестирования.</p>
+      <div class="btn-row">
+        <button type="submit" class="btn red big">⌨︎ Получить ссылку на скачивание</button>
+      </div>
+    </form>
+  </div>
+
+  <div id="download-card" class="download-card hidden"></div>
+</div></section>
+
+<footer><div class="wrap">
+  <p><span class="brand" style="font-size:18px">⌨︎ Wordsmith</span> — настольный редактор для писателей.</p>
+  <p class="muted">Автор: Sirin (Ксения Зборовская) ·
+    <a href="https://www.litres.ru/author/33768736/" target="_blank" rel="noopener">Литрес</a> ·
+    <a href="https://vk.com/sirin_voice" target="_blank" rel="noopener">ВКонтакте</a>.</p>
+  <p class="muted">© 2026 Wordsmith · Sirin</p>
+</div></footer>
+
+<script src="assets/app.js"></script>
+</body>
+</html>

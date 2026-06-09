@@ -1,0 +1,291 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Гайд — Wordsmith</title>
+<link rel="stylesheet" href="assets/style.css">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E⌨️%3C/text%3E%3C/svg%3E">
+</head>
+<body data-page="guide">
+
+<header class="topbar"><div class="wrap">
+  <a class="brand" href="index.html"><span class="tw">⌨︎</span> Wordsmith</a>
+  <nav class="nav">
+    <a href="index.html" data-page="home">Главная</a>
+    <a href="index.html#features" data-page="features">Возможности</a>
+    <a href="guide.html" data-page="guide">Гайд</a>
+    <a href="tester.html" data-page="tester">Стать тестером</a>
+    <a href="feedback.html" data-page="feedback">Фидбек</a>
+  </nav>
+</div></header>
+
+<section class="section"><div class="wrap">
+  <div class="hero-grid">
+    <div>
+      <h1>Полный гайд по Wordsmith</h1>
+      <p class="lead">Все функции приложения — с реальными скриншотами.
+        В качестве примера используется роман <b>«Вороний Утёс»</b> Ксении Зборовской,
+        с персонажами: <span class="chip">Сиенна Стоддард</span><span class="chip">Рук</span>
+        <span class="chip">Ханна</span><span class="chip">Маркиза де Шарне</span>
+        <span class="chip">Доктор Эдвард</span><span class="chip">Полли</span> и др.</p>
+    </div>
+    <div class="cover-frame">
+      <span class="cover-tape"></span>
+      <img src="assets/cover.png" alt="Обложка романа «Вороний Утёс»">
+    </div>
+  </div>
+</div></section>
+
+<section class="section"><div class="wrap guide-layout">
+
+<aside>
+<div class="guide-toc sheet" style="padding:14px 12px">
+  <b style="font-size:13px">Содержание</b>
+  <a href="#start">Стартовый экран</a>
+  <a href="#editor">Редактор и дерево</a>
+  <a href="#quality">Подсветка качества</a>
+  <a href="#themes">Темы оформления</a>
+  <a href="#focus">Режим фокуса и печатной машинки</a>
+  <a href="#reading">Режим чтения</a>
+  <a href="#split">Разделение экрана</a>
+  <a href="#characters">Персонажи</a>
+  <a href="#socialmap">Социограмма и древо</a>
+  <a href="#locations">Локации</a>
+  <a href="#factions">Фракции и организации</a>
+  <a href="#lore">Центр лора</a>
+  <a href="#goals">Цели и статистика</a>
+  <a href="#export">Экспорт и импорт</a>
+  <a href="#backup">История и бэкапы</a>
+  <a href="#settings">Настройки</a>
+  <a href="#assistants">Помощники письма</a>
+  <a href="#namegen">Генератор имён</a>
+  <a href="#ambient">Амбиент / атмосфера</a>
+  <a href="#dice">Кубики D&amp;D</a>
+  <a href="#shortcuts">Горячие клавиши</a>
+  <a href="#about">О программе</a>
+</div>
+</aside>
+
+<div>
+
+<div class="feature" id="start">
+<h2>Стартовый экран</h2>
+<p>При запуске Wordsmith показывает полку ваших проектов. Отсюда можно <b>создать новый роман, пьесу, сценарий, эссе</b>
+  или открыть существующий <code>.writerproj</code> файл.
+  У каждого проекта видна «корешок»-обложка с инициалами названия, автором и датой.</p>
+<div class="shot"><img src="assets/guide/start.png" alt="Стартовый экран Wordsmith"></div>
+<p class="cap">Стартовый экран. На полке — «Вороний Утёс» Ксении Зборовской.</p>
+</div>
+
+<div class="feature" id="editor">
+<h2>Редактор и дерево глав</h2>
+<p>Центральное окно — TipTap-редактор с поддержкой <b>жирного, курсива, подчёркивания, зачёркивания,
+  заголовков, списков, ссылок, таблиц, изображений</b>. Слева — <b>иерархическое дерево</b>:
+  главы &rarr; сцены, с перетаскиванием и статусами
+  <span class="chip">черновик</span><span class="chip">правка</span><span class="chip">готово</span>.
+  Каждая сцена хранит <b>POV</b> (чей взгляд), <b>локацию</b>, <b>синопсис</b> и <b>теги</b>.</p>
+<div class="shot"><img src="assets/guide/editor.png" alt="Редактор Wordsmith — тема Печатная машинка"></div>
+<p class="cap">Глава 1 «До падения». POV — Сиенна Стоддард, локация — Поместье Стоддардов.
+  Повторы выделены рамкой: <i>Сиенна</i>, <i>старый</i>, <i>прямо</i>.</p>
+<blockquote class="quote-book">«Летнее утро в поместье Стоддардов начиналось с птичьего щебета. Их голоса проникали сквозь тонкие гардины спальни Сиенны, путаясь с ароматом садовой розы, что росла прямо под окном.»</blockquote>
+</div>
+
+<div class="feature" id="quality">
+<h2>Подсветка качества текста</h2>
+<p>Wordsmith подсвечивает прямо в редакторе:</p>
+<ul>
+  <li><b>Повторы</b> — слова, встречающиеся рядом слишком часто.</li>
+  <li><b>Слова-паразиты</b> — клише, канцелярит, ненужные усилители.</li>
+  <li><b>Длинные предложения</b> — свыше заданного порога.</li>
+  <li><b>Визуализатор ритма</b> — цветовая карта длин предложений.</li>
+</ul>
+<p>Каждый тип можно включить/выключить отдельно.</p>
+<div class="shot"><img src="assets/guide/assistants.png" alt="Настройки помощников"></div>
+<p class="cap">Панель «Помощники»: режим фокуса, печатная машинка, автоисправления и подсветка проблем.</p>
+</div>
+
+<div class="feature" id="themes">
+<h2>21 тема + конструктор</h2>
+<p>Выберите тему по настроению — от светлой до «Хоррор» и «Киберпанк»:</p>
+<p><span class="chip">Светлая</span><span class="chip">Тёмная</span><span class="chip">Сепия</span>
+   <span class="chip">Лесная</span><span class="chip">Океан</span><span class="chip">Лавандовая</span>
+   <span class="chip">Кофе</span><span class="chip">Печатная машинка</span><span class="chip">Таверна</span>
+   <span class="chip">Вампирская</span><span class="chip">Кавай-аниме</span><span class="chip">Киберпанк</span>
+   <span class="chip">Нуар</span><span class="chip">Хоррор</span><span class="chip">Комедия</span>
+   <span class="chip">Каменная</span><span class="chip">Романтика</span> и ещё…</p>
+<div class="shot"><img src="assets/guide/themes.png" alt="Галерея тем"></div>
+<p class="cap">Галерея тем. Выберите готовую или создайте свою.</p>
+</div>
+
+<div class="feature" id="focus">
+<h2>Режим фокуса и печатной машинки</h2>
+<p><b>Режим фокуса</b> затемняет весь текст, кроме текущего абзаца — ничего не отвлекает.
+   <b>Режим печатной машинки</b> держит курсор всегда по центру экрана, как в настоящей каретке.</p>
+<div class="shot"><img src="assets/guide/focus.png" alt="Режим фокуса"></div>
+<p class="cap">Режим фокуса + печатная машинка. Активный абзац — чёткий, остальные приглушены.</p>
+<blockquote class="quote-book">«Вскоре она уже сидела в экипаже, укутанная в дорожное платье цвета пыльной розы, а Брамбл разместился у её ног, положив голову на лапы.»</blockquote>
+</div>
+
+<div class="feature" id="reading">
+<h2>Режим чтения</h2>
+<p>Полноэкранный чистый вид для вычитки — без панелей и тулбаров, только текст. Выход — <kbd>Esc</kbd>.</p>
+<div class="shot"><img src="assets/guide/reading.png" alt="Режим чтения"></div>
+<p class="cap">Чтение без отвлечений. Сцена и POV видны в заголовке.</p>
+</div>
+
+<div class="feature" id="split">
+<h2>Разделение экрана</h2>
+<p>Открывайте две сцены рядом: сверяйте начало с кульминацией, переносите детали между главами.</p>
+<div class="shot"><img src="assets/guide/split.png" alt="Разделение экрана"></div>
+<p class="cap">Слева — Глава 1 «До падения», справа — Глава 5 «Золотая клетка». Обе с подсветкой качества.</p>
+</div>
+
+<div class="feature" id="characters">
+<h2>Доска персонажей</h2>
+<p>У каждого героя — карточка: <b>роль, архетип, внешность, описание, мотивация, арка, цитата, группа</b>.</p>
+<div class="shot"><img src="assets/guide/characters.png" alt="Доска персонажей"></div>
+<p class="cap">Персонажи «Вороньего Утёса»: Сиенна, доктор Эдвард, Полли, Кэтрин, Эдгар, Рук, Ханна, маркиза де Шарне, Филипп.</p>
+</div>
+
+<div class="feature" id="socialmap">
+<h2>Социограмма и семейное древо</h2>
+<p>Визуальная карта связей. Цветные линии показывают тип отношений:
+  <span class="chip" style="border-color:#60A5FA">друг</span>
+  <span class="chip" style="border-color:#F472B6">любовь</span>
+  <span class="chip" style="border-color:#EF4444">враг</span>
+  <span class="chip" style="border-color:#22C55E">родство</span>
+  <span class="chip" style="border-color:#06B6D4">союз</span>.</p>
+<div class="shot"><img src="assets/guide/socialmap.png" alt="Социограмма"></div>
+<p class="cap">Социограмма: Семья Стоддардов, Обитатели Вороньего Утёса, Дом де Шарне. Линии — связи между героями.</p>
+<div class="shot"><img src="assets/guide/tree.png" alt="Семейное древо"></div>
+<p class="cap">Семейное древо: Эдвард → Сиенна, Маркиза → Филипп.</p>
+</div>
+
+<div class="feature" id="locations">
+<h2>Доска локаций</h2>
+<p>Карточки мест действия с описанием и привязкой к сценам.
+  В «Вороньем Утёсе» это <b>Поместье Стоддардов, Улей, Золотая клетка, Пустошь</b> и сам <b>Вороний Утёс</b>.</p>
+<div class="shot"><img src="assets/guide/locations.png" alt="Локации"></div>
+<p class="cap">Локации романа. Каждая привязана к соответствующим сценам через POV-метаданные.</p>
+</div>
+
+<div class="feature" id="factions">
+<h2>Фракции и организации</h2>
+<p>Создавайте группировки: рода, кланы, гильдии. Укажите лидера, участников, союзников и врагов.</p>
+<div class="shot"><img src="assets/guide/factions.png" alt="Фракции"></div>
+<p class="cap">Фракции: Обитатели Вороньего Утёса (Рук, Ханна), Дом де Шарне (маркиза, Филипп), Семья Стоддардов.</p>
+</div>
+
+<div class="feature" id="lore">
+<h2>Центр лора</h2>
+<p>Единый хаб для всего мира книги: персонажи, локации, карта мира, словарь, связи, фракции, магические системы.</p>
+<div class="shot"><img src="assets/guide/lore.png" alt="Меню лора"></div>
+<p class="cap">Выпадающее меню лора — быстрый доступ ко всем досками.</p>
+</div>
+
+<div class="feature" id="goals">
+<h2>Цели и статистика</h2>
+<p>Задайте дневную норму слов, цель на книгу и дедлайн. Wordsmith считает <b>streak</b> (серию продуктивных дней)
+  и показывает статистику за 30 дней.</p>
+<div class="shot"><img src="assets/guide/goals.png" alt="Цели по словам"></div>
+<p class="cap">Цели: 1 500 слов за сессию. Строка статуса внизу показывает прогресс: 0/1500.</p>
+</div>
+
+<div class="feature" id="export">
+<h2>Экспорт и импорт</h2>
+<p>Выгрузите книгу целиком или отдельные главы в формат:</p>
+<p><span class="chip">Word (.docx)</span><span class="chip">PDF</span><span class="chip">EPUB</span>
+   <span class="chip">FB2</span><span class="chip">Markdown</span><span class="chip">TXT</span>.</p>
+<p>Импорт — из <code>.docx</code> и <code>.md</code>.</p>
+<div class="shot"><img src="assets/guide/export.png" alt="Экспорт"></div>
+<p class="cap">Окно экспорта. Издательские пресеты настраивают отступы, поля и шрифт автоматически.</p>
+</div>
+
+<div class="feature" id="backup">
+<h2>История и бэкапы</h2>
+<p>Каждые 15 минут Wordsmith создаёт снимок проекта. Можно вернуться к любой точке
+  или <b>сравнить</b> текущий текст с прежним — режим правок и diff.</p>
+<div class="shot"><img src="assets/guide/backup.png" alt="История бэкапов"></div>
+<p class="cap">Автоснимок с кнопками «Восстановить» и «Сравнить».</p>
+</div>
+
+<div class="feature" id="settings">
+<h2>Настройки</h2>
+<p>Язык, шрифт и размер, издательский пресет, фон сайдбара, стиль каретки и каретки,
+  красная строка и много другое — всё под рукой.</p>
+<div class="shot"><img src="assets/guide/settings.png" alt="Настройки"></div>
+<p class="cap">Вкладка «Внешний вид»: шрифт, размер, фон рабочей области, стиль сайдбара.</p>
+</div>
+
+<div class="feature" id="assistants">
+<h2>Помощники письма</h2>
+<p>Настраиваемые подсказки: <b>подсветка повторов, паразитов, длинных предложений</b>,
+  плюс <b>визуализатор ритма</b> (цветовая карта предложений).</p>
+<div class="shot"><img src="assets/guide/assistants.png" alt="Помощники"></div>
+<p class="cap">Тонкая настройка: что подсвечивать и на каком пороге.</p>
+</div>
+
+<div class="feature" id="namegen">
+<h2>Генератор имён</h2>
+<p>Придумайте имена за секунду — славянские, английские, фэнтезийные и др. Клик по имени копирует в буфер.</p>
+<div class="shot"><img src="assets/guide/namegen.png" alt="Генератор имён"></div>
+<p class="cap">Славянские имена: Василиса Васильева, Зоя Берестова, Маргарита Беляева…</p>
+</div>
+
+<div class="feature" id="ambient">
+<h2>Амбиент / атмосфера</h2>
+<p>Фоновые звуки для погружения: <b>Тишина, Дождь, Лес, Камин, Кафе, Океан, Ветер, Гроза, Птицы, Поезд</b>.
+  Громкость регулируется ползунком.</p>
+<div class="shot"><img src="assets/guide/ambient.png" alt="Амбиент"></div>
+<p class="cap">Панель «Атмосфера» — выберите звук и настройте громкость.</p>
+</div>
+
+<div class="feature" id="dice">
+<h2>Кубики D&amp;D</h2>
+<p>Встроенный бросок кубиков d4–d20 с коллекцией скинов — для тех, кто любит решать сюжетные развилки случайно.</p>
+<div class="shot"><img src="assets/guide/dice.png" alt="Кубики"></div>
+<p class="cap">Кубики со скинами: Аметист, Рубин и другие.</p>
+</div>
+
+<div class="feature" id="shortcuts">
+<h2>Горячие клавиши</h2>
+<p>Шпаргалка (<kbd>Ctrl+/</kbd>): файл, навигация, форматирование, окна и панели.</p>
+<div class="shot"><img src="assets/guide/shortcuts.png" alt="Горячие клавиши"></div>
+<p class="cap">Основные сочетания: Ctrl+S (сохранить), Ctrl+P (быстрый переход), Ctrl+Shift+P (темы), Ctrl+Shift+H (персонажи).</p>
+</div>
+
+<div class="feature" id="about">
+<h2>О программе</h2>
+<p>Wordsmith создан писательницей <b>Ксенией Зборовской</b> — автором романов
+  «Вороний Утёс» и «Чёрный склеп». Приложение бесплатное.</p>
+<div class="shot"><img src="assets/guide/about.png" alt="О программе"></div>
+<p class="cap">Автор, ссылки на книги и кнопка поддержки.</p>
+</div>
+
+</div>
+</div></section>
+
+<section class="section"><div class="wrap center">
+  <div class="sheet">
+    <h2>Хотите попробовать?</h2>
+    <p class="lead" style="margin:0 auto">Станьте тестером — и получите сборку прямо сейчас.</p>
+    <div class="btn-row" style="justify-content:center;margin-top:14px">
+      <a class="btn red big" href="tester.html">⌨︎ Стать тестером</a>
+      <a class="btn big" href="feedback.html">Оставить фидбек</a>
+    </div>
+  </div>
+</div></section>
+
+<footer><div class="wrap">
+  <p><span class="brand" style="font-size:18px">⌨︎ Wordsmith</span> — настольный редактор для писателей.</p>
+  <p class="muted">Автор: Sirin (Ксения Зборовская) ·
+    <a href="https://www.litres.ru/author/33768736/" target="_blank" rel="noopener">Литрес</a> ·
+    <a href="https://vk.com/sirin_voice" target="_blank" rel="noopener">ВКонтакте</a>.
+    Текст «Вороний Утёс» использован как пример.</p>
+  <p class="muted">© 2026 Wordsmith · Sirin</p>
+</div></footer>
+
+<script src="assets/app.js"></script>
+</body>
+</html>
